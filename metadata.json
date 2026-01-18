@@ -1,0 +1,7 @@
+{
+  "name": "ToolsBD - All-in-One Utility Suite",
+  "description": "A powerful collection of free online tools including calculators, text utilities, image converters, and an AI assistant to help you get things done faster.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
