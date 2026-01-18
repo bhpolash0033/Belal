@@ -6,7 +6,8 @@ import ToolGrid from './components/ToolGrid';
 import Sidebar from './components/Sidebar';
 import ToolDetail from './components/ToolDetail';
 import AIChat from './components/AIChat';
-import { TOOLS as STATIC_TOOLS } from './constants';
+import HeroSlider from './components/HeroSlider';
+import { TOOLS as STATIC_TOOLS, APP_LOGO } from './constants';
 import { Tool, ToolCategory } from './types';
 
 const App: React.FC = () => {
@@ -24,7 +25,7 @@ const App: React.FC = () => {
   });
 
   useEffect(() => {
-    const timer = setTimeout(() => setIsLoading(false), 1200);
+    const timer = setTimeout(() => setIsLoading(false), 2000); // Slightly longer for better visual impact
     return () => clearTimeout(timer);
   }, []);
 
@@ -62,15 +63,37 @@ const App: React.FC = () => {
   if (isLoading) {
     return (
       <div className="min-h-screen bg-slate-50 dark:bg-slate-950 flex flex-col items-center justify-center p-6 transition-colors duration-500">
-        <div className="relative w-32 h-32 mb-8 flex items-center justify-center">
-          <div className="absolute inset-0 border-4 border-slate-200 dark:border-slate-800 rounded-full scale-110"></div>
-          <div className="absolute inset-0 border-4 border-mint border-t-transparent rounded-full animate-spin scale-110"></div>
-          <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhU9j8V4qM3O7q7z_H1U2v-z-P_I_Y_Z_A_B_C_D_E_F_G_H_I_J_K_L_M_N_O_P/s1600/ToolsBD.png" 
-               alt="ToolsBD" className="w-24 h-auto animate-pulse z-10 brightness-110" />
+        <div className="relative w-44 h-44 mb-10 flex items-center justify-center">
+          {/* Outer Spinning Ring */}
+          <div className="absolute inset-0 border-[6px] border-slate-200 dark:border-slate-800 rounded-full opacity-20"></div>
+          <div className="absolute inset-0 border-[6px] border-mint border-t-transparent rounded-full animate-spin"></div>
+          
+          {/* Inner Counter-Spinning Ring */}
+          <div className="absolute inset-4 border-[3px] border-slate-300 dark:border-slate-700 rounded-full opacity-30 animate-reverse-spin"></div>
+          
+          {/* Logo Container with Glassmorphism */}
+          <div className="relative z-10 w-28 h-28 bg-white dark:bg-slate-900 rounded-[2.5rem] shadow-2xl flex items-center justify-center p-5 border border-white/50 dark:border-slate-800/50 backdrop-blur-xl">
+            <img 
+              src={APP_LOGO} 
+              alt="ToolsBD" 
+              className="w-full h-auto animate-pulse brightness-110"
+              onError={(e) => {
+                const target = e.target as HTMLImageElement;
+                target.src = "https://via.placeholder.com/150?text=TBD";
+              }}
+            />
+          </div>
         </div>
-        <div className="text-center">
-            <h2 className="text-2xl font-black text-slate-800 dark:text-slate-100 tracking-tight">ToolsBD</h2>
-            <p className="text-slate-400 dark:text-slate-500 mt-1 font-medium text-sm">Loading Native Utility Suite...</p>
+        
+        <div className="text-center animate-in fade-in slide-in-from-bottom-2 duration-700">
+            <h2 className="text-4xl font-black text-slate-800 dark:text-slate-100 tracking-tighter">
+              Tools<span className="text-mint">BD</span>
+            </h2>
+            <div className="flex items-center justify-center gap-2 mt-3">
+              <div className="h-1 w-8 bg-mint rounded-full"></div>
+              <p className="text-slate-400 dark:text-slate-500 font-black text-[10px] uppercase tracking-[0.3em]">Native Suite</p>
+              <div className="h-1 w-8 bg-mint rounded-full"></div>
+            </div>
         </div>
       </div>
     );
@@ -99,6 +122,8 @@ const App: React.FC = () => {
           <ToolDetail tool={selectedTool} onBack={resetView} />
         ) : (
           <>
+            <HeroSlider />
+            
             <div className="mb-8 flex flex-col md:flex-row md:items-end justify-between gap-4 animate-in fade-in slide-in-from-top-4 duration-500">
               <div>
                 <h2 className="text-3xl font-black text-slate-800 dark:text-slate-100 mb-1 leading-none">

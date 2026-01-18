@@ -59,6 +59,15 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, activeCategory, setA
                 <span className="text-sm">{cat}</span>
               </button>
             ))}
+
+            <div className="pt-6 pb-2 text-[10px] font-black text-slate-400 dark:text-slate-500 uppercase tracking-widest px-4">Support</div>
+            <button 
+              className="w-full flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 font-medium transition-colors"
+              onClick={() => alert('Opening report form...')}
+            >
+              <i className="fa-solid fa-bug text-rose-400 w-5"></i>
+              <span className="text-sm">Report a Tool</span>
+            </button>
           </div>
 
           <div className="mt-auto pt-6 border-t border-slate-100 dark:border-slate-800">

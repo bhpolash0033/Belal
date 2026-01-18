@@ -16,6 +16,16 @@
                 extend: {
                     colors: {
                         mint: '#7ee9d1',
+                    },
+                    animation: {
+                        'spin-slow': 'spin 3s linear infinite',
+                        'reverse-spin': 'reverse-spin 1.5s linear infinite',
+                    },
+                    keyframes: {
+                        'reverse-spin': {
+                            from: { transform: 'rotate(360deg)' },
+                            to: { transform: 'rotate(0deg)' },
+                        }
                     }
                 }
             }
@@ -52,6 +62,14 @@
         .dark .ad-container {
             background: rgba(255,255,255,0.03);
             border-color: rgba(255,255,255,0.1);
+        }
+
+        @keyframes reverse-spin {
+            from { transform: rotate(360deg); }
+            to { transform: rotate(0deg); }
+        }
+        .animate-reverse-spin {
+            animation: reverse-spin 1.5s linear infinite;
         }
     </style>
 <script type="importmap">
