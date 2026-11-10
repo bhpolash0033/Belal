@@ -1,10 +1,32 @@
 
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 90">
   <style>
-    .main { fill: #111827; }
-    .icon-bg { fill: #111827; }
-    .icon-text { fill: #ffffff; }
-    .sub { fill: #64748b; }
+    .main {
+      fill: #111827;
+    }
+    .icon-bg {
+      fill: #111827;
+    }
+    .icon-text {
+      fill: #ffffff;
+    }
+    .sub {
+      fill: #64748b;
+    }
+
+    /* Dark Mode */
+    .dark .main {
+      fill: #ffffff;
+    }
+    .dark .icon-bg {
+      fill: #ffffff;
+    }
+    .dark .icon-text {
+      fill: #111827;
+    }
+    .dark .sub {
+      fill: #94a3b8;
+    }
 
     @media (prefers-color-scheme: dark) {
       .main { fill: #ffffff; }
@@ -20,8 +42,10 @@
 
   <text x="91" y="59" font-family="Arial,sans-serif"
     font-size="37" font-weight="800" class="main">TRICKY</text>
+
   <text x="244" y="59" font-family="Arial,sans-serif"
     font-size="37" font-weight="800" fill="#1687e8">BD</text>
+
   <text x="305" y="59" font-family="Arial,sans-serif"
     font-size="16" font-weight="700" class="sub">.COM</text>
 </svg>
