@@ -41,10 +41,10 @@
   <circle cx="63" cy="20" r="5" fill="#1687e8"/>
 
   <text x="91" y="59" font-family="Arial,sans-serif"
-    font-size="37" font-weight="800" class="main">TRICKY</text>
+    font-size="37" font-weight="800" class="main">TRICK</text>
 
   <text x="244" y="59" font-family="Arial,sans-serif"
-    font-size="37" font-weight="800" fill="#1687e8">BD</text>
+    font-size="37" font-weight="800" fill="#1687e8">BIN</text>
 
   <text x="305" y="59" font-family="Arial,sans-serif"
     font-size="16" font-weight="700" class="sub">.COM</text>
