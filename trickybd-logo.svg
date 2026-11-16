@@ -8,7 +8,10 @@
       fill: #111827;
     }
     .icon-text {
-      fill: #ffffff;
+      fill: #ff8500;
+      stroke: #a84300;
+      stroke-width: 0.7;
+      stroke-linejoin: round;
     }
     .sub {
       fill: #64748b;
@@ -22,7 +25,8 @@
       fill: #ffffff;
     }
     .dark .icon-text {
-      fill: #111827;
+      fill: #ff8500;
+      stroke: #a84300;
     }
     .dark .sub {
       fill: #94a3b8;
@@ -31,15 +35,38 @@
     @media (prefers-color-scheme: dark) {
       .main { fill: #ffffff; }
       .icon-bg { fill: #ffffff; }
-      .icon-text { fill: #111827; }
+      .icon-text { fill: #ff8500; stroke: #a84300; }
       .sub { fill: #94a3b8; }
     }
   </style>
 
+  <!-- Icon Background -->
   <rect class="icon-bg" x="5" y="8" width="72" height="72" rx="17"/>
-  <path class="icon-text" d="M21 26H61V36H46V64H36V36H21Z"/>
-  <circle cx="63" cy="20" r="5" fill="#1687e8"/>
 
+  <!-- Original Orange Pixel T Logo -->
+  <g class="icon-text" transform="translate(-24,-9) scale(0.105)">
+    <path d="
+      M400 270
+      H945
+      L850 398
+      H740
+      V680
+      L620 800
+      V400
+      L510 280
+      V398
+      H390
+      V275
+      H400
+      Z
+    "/>
+
+    <rect x="290" y="170" width="110" height="105"/>
+    <rect x="510" y="395" width="100" height="100"/>
+    <rect x="415" y="493" width="100" height="100"/>
+  </g>
+
+  <!-- Brand Name -->
   <text x="91" y="59" font-family="Arial,sans-serif"
     font-size="37" font-weight="800" class="main">TRICK</text>
 
